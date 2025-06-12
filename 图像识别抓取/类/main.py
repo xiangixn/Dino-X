@@ -10,7 +10,7 @@ from datetime import datetime
 def main():
     rospy.init_node("object_grasping_system")
 
-    arm = None  # ✅ 提前声明，避免 finally 中报错
+    arm = None  # 前声明，避免 finally 中报错
 
     try:
         with RealSenseCamera() as camera:
@@ -54,9 +54,9 @@ def main():
 
 
     except Exception as e:
-        print(f"[❌] 系统运行出错: {e}")
+        print(f"系统运行出错: {e}")
     finally:
-        if arm:  # ✅ 只有初始化成功才调用 shutdown
+        if arm:  # 只有初始化成功才调用 shutdown
             arm.shutdown()
 
 if __name__ == "__main__":
