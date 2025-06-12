@@ -50,7 +50,7 @@ def main():
             else:
                 print("未检测到目标或掩码为空。")
 
-            arm.move_to(0.4, 0.0, 0.2)  # 在前方中等高度，肯定能到
+            arm.move_to(0.5, 0.0, 0.5)  # 在前方中等高度，肯定能到
 
 
     except Exception as e:
