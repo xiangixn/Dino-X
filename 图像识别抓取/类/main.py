@@ -62,9 +62,9 @@ def main():
 
 
     except Exception as e:
-        print(f"[❌] 系统运行出错: {e}")
+        print(f"系统运行出错: {e}")
     finally:
-        if arm:  # ✅ 只有初始化成功才调用 shutdown
+        if arm:  # 只有初始化成功才调用 shutdown
             arm.shutdown()
 
 if __name__ == "__main__":
