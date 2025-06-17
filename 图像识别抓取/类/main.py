@@ -4,23 +4,25 @@ from RobotArm import RobotArm
 import rospy
 import os
 from datetime import datetime
-# from voice_txt import VoiceCommand
+from voice_txt import VoiceCommand
+from GripperController import GripperController
 
 
 def main():
     rospy.init_node("object_grasping_system")
 
-    arm = None  # ✅ 提前声明，避免 finally 中报错
+    arm = None  # 提前声明，避免 finally 中报错
 
     try:
         with RealSenseCamera() as camera:
-            detector = ObjectDetector("8f14d9c9dcd2c27a5f3a4fb29a762c58")  # api
+            detector = ObjectDetector("3805134fdf09d4b607da5578f449699b")  # api
             arm = RobotArm()
+            gripper = GripperController()
 
             # === 固定文字提示（未使用语音）===
-            prompt = "cap"
+            prompt = "apple"
             # voice = VoiceCommand()
-            # prompt = voice.record_and_recognize(source_lang="zh", target_lang="en")  # 语音转英文
+            # prompt = voice.run()   # 语音转英文
 
             # === 获取图像帧 ===
             color_img, depth_img, intrinsics = camera.capture_frame()
@@ -46,11 +48,17 @@ def main():
                 x_base, y_base, z_base = arm.transform_camera_to_base((x_cam, y_cam, z_cam))
                 mask = masks[0]
                 quat = arm.compute_orientation_from_mask(mask)
-                # arm.move_to(x_base, y_base, z_base, orientation=quat)
+                gripper.open()
+                arm.move_to(x_base, y_base, z_base, orientation=quat)
+                rospy.sleep(1.0)
+                gripper.close()
+                rospy.sleep(5.0)
+                arm.move_to(0.068, 0.011, 0.449)
+
             else:
                 print("未检测到目标或掩码为空。")
 
-            arm.move_to(0.5, 0.0, 0.5)  # 在前方中等高度，肯定能到
+            # arm.move_to(0.5, 0.0, 0.5)  # 在前方中等高度，肯定能到
 
 
     except Exception as e:

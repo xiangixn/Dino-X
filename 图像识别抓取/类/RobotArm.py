@@ -17,13 +17,13 @@ class RobotArm:
         self._configure_arm()
 
         # 标定得到的相机 → base（link00）变换参数
-        self.R = np.array([ [ 0.71019493 , -0.02226755 , -0.70365284],
-                            [ 0.15695671 , 0.97935068  , 0.12742381] ,
-                            [ 0.68628547 , -0.20093878 , 0.69902493]])
+        self.R = np.array( [[-0.99809834 , 0.01294993 , 0.06026614],
+                            [ 0.00892573 , 0.99774183 , -0.0665701 ],
+                            [-0.06099213 , -0.06590559, -0.99596005]])
         
-        self.T = np.array([ [[0.37621825],
-                            [0.09743894],
-                            [0.24983783]]])
+        self.T = np.array( [[ 0.65120943],
+                            [-0.01701843],
+                            [ 0.82707643]])
 
     def _configure_arm(self):
         self.move_group.set_max_velocity_scaling_factor(0.2)
@@ -43,9 +43,9 @@ class RobotArm:
         rospy.loginfo(f"[Motion] 尝试移动到目标点: x={x:.3f}, y={y:.3f}, z={z:.3f}")
 
         pose = geometry_msgs.msg.Pose()
-        pose.position.x = x
-        pose.position.y = y
-        pose.position.z = z
+        pose.position.x = x - 0.25
+        pose.position.y = y + 0.1 
+        pose.position.z = z + 0.025
         pose.orientation.x = 0 #orientation[0] #0.707
         pose.orientation.y = 0 #orientation[1]
         pose.orientation.z = 0 #orientation[2]
