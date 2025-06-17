@@ -4,13 +4,11 @@
 
 本项目参考自 [MIAA_SIM 项目](https://github.com/Khlann/MIAA_SIM/tree/rekep)，并结合实际硬件部署需求进行修改和拓展。
 
----
 
 ## 📖 项目简介 / Introduction
 
 本项目实现了一个结合语音输入与视觉检测的通用抓取系统。用户通过麦克风输入语音指令，经语义提取模块（基于豆包等大模型）提取目标关键词，传递给 DINO-X 进行图像中目标检测与掩码生成。通过 Realsense 相机获取的图像，在掩码区域内计算质心作为抓取点，并驱动 Unitree Z1 机械臂完成抓取动作。系统特点是自然语言交互、目标自定位、低成本部署。
 
----
 
 ## 🧠 项目结构 / Project Structure
 
@@ -29,7 +27,6 @@ project_root/
 └── main.py                               # 主运行脚本，调用语音识别 + 视觉检测 + 控制流程
 ```
 
----
 
 ## 🔧 安装方式 / Installation
 
@@ -43,18 +40,16 @@ todo
 - ✅ Realsense D435 / D405 相机
 - ✅ 麦克风输入设备（或支持文本输入）
 
----
-
 ## 🚀 快速上手 / Quick Start
 
 ```bash
 # z1控制
+todo
 
 # 抓取
-
+todo
 ```
 
----
 
 ## 📎 引用 / Citation
 
@@ -67,7 +62,6 @@ todo
 }
 ```
 
----
 
 ## 🙋 联系方式 / Contact
 
