@@ -66,18 +66,15 @@ project_root/
 
 ## 安装说明 / Installation
 
-### 系统要求  
-### System Requirements
+### 系统要求   System Requirements
 
 * Ubuntu 20.04+  
 * ROS Noetic  
 * Python 3.8+  
 
-### 安装步骤  
-### Installation Steps
+### 安装步骤   Installation Steps
 
-#### 1. 安装 Z1 控制环境  
-#### 1. Install Z1 Control Environment
+#### 1. 安装 Z1 控制环境   Install Z1 Control Environment
 
 参考官方文档：[Z1 ROS 安装指南](https://github.com/unitreerobotics/z1_ros/blob/noetic/doc/setup.md)  
 Refer to the official guide: [Z1 ROS Setup Guide](https://github.com/unitreerobotics/z1_ros/blob/noetic/doc/setup.md)
@@ -87,8 +84,7 @@ Refer to the official guide: [Z1 ROS Setup Guide](https://github.com/unitreerobo
 sudo apt-get install librealsense2-dkms librealsense2-utils librealsense2-dev librealsense2-dbg
 ```
 
-#### 3. 安装手眼标定依赖  
-#### 3. Install Hand-Eye Calibration Dependencies
+#### 3. 安装手眼标定依赖   Install Hand-Eye Calibration Dependencies
 
 ```bash
 cd 标定/hand_eye_calibration-main/
@@ -103,8 +99,7 @@ pip install -r requirements.txt
 
 ## 快速上手 / Quick Start
 
-### 1. 启动 Z1 控制  
-### 1. Launch Z1 Control
+### 1. 启动 Z1 控制   Launch Z1 Control
 
 ```bash
 source /opt/ros/noetic/setup.bash
@@ -112,8 +107,7 @@ source ~/z1_ws/devel/setup.bash
 roslaunch z1_bringup real_arm.launch rviz:=true
 ```
 
-### 2. 手眼标定（首次运行必做）  
-### 2. Hand-Eye Calibration (Required on First Run)
+### 2. 手眼标定（首次运行必做）   Hand-Eye Calibration (Required on First Run)
 
 我们做的是“眼在手外”标定，因此需要打印棋盘格标定板，并固定在机械臂末端（夹爪上），且其相对位置必须在采集过程中保持不变。  
 We use an "eye-to-hand" calibration setup. The checkerboard must be printed and rigidly mounted to the end-effector during data collection.
@@ -151,8 +145,7 @@ self.R = np.array([[...], [...], [...]])
 self.T = np.array([[...], [...], [...]])
 ```
 
-### 3. 配置 API Key  
-### 3. Configure API Keys
+### 3. 配置 API Key   Configure API Keys
 
 * 获取 DINO-X API：  
   Get DINO-X API Key:  
@@ -170,8 +163,7 @@ detector = ObjectDetector("你的DINOX_API")
 api_key = "你的豆包API")
 ```
 
-### 4. 运行主程序  
-### 4. Run the Main Program
+### 4. 运行主程序   Run the Main Program
 
 ```bash
 cd 图像识别抓取/类/
