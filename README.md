@@ -32,7 +32,7 @@ project_root/
 
 ### 基本依赖
 ```
-todo
+参考[MIAA_SIM 项目](https://github.com/unitreerobotics/z1_ros)
 ```
 
 ### 硬件支持
