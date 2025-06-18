@@ -97,12 +97,9 @@ pip install -r requirements.txt
 
 ## 硬件支持 / Hardware Support
 
-* Unitree Z1 机械臂  
+* Unitree Z1 机械臂  Unitree Z1 robotic arm 
 * Intel RealSense D435 / D405 相机  
-* USB 麦克风（或支持文本输入）  
-* Unitree Z1 robotic arm  
-* Intel RealSense D435 / D405 camera  
-* USB microphone (or use text input as fallback)
+* USB 麦克风（或支持文本输入）  USB microphone (or use text input as fallback)
 
 ## 快速上手 / Quick Start
 
