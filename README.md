@@ -4,8 +4,6 @@
 
 > 本项目参考自 [MIAA_SIM (rekep 分支)](https://github.com/Khlann/MIAA_SIM/tree/rekep)，并针对实际硬件部署进行了拓展优化。
 
----
-
 ## 项目简介 / Introduction
 
 系统整体流程：
@@ -23,8 +21,6 @@
 - 多模态理解与图像目标定位  
 - 通用目标抓取能力，模块化部署  
 
----
-
 ## 项目结构 / Project Structure
 
 ```text
@@ -41,7 +37,6 @@ project_root/
 ├── main.py                              # 主程序入口
 ````
 
----
 
 ## 安装说明 / Installation
 
@@ -70,7 +65,6 @@ cd 标定/hand_eye_calibration-main/
 pip install -r requirements.txt
 ```
 
----
 
 ## 硬件支持 / Hardware Support
 
@@ -78,7 +72,6 @@ pip install -r requirements.txt
 * Intel RealSense D435 / D405 相机
 * USB 麦克风（或支持文本输入）
 
----
 
 ## 快速上手 / Quick Start
 
@@ -90,7 +83,6 @@ source ~/z1_ws/devel/setup.bash
 roslaunch z1_bringup real_arm.launch rviz:=true
 ```
 
----
 
 ### 2. 手眼标定（首次运行必做）
 
@@ -124,7 +116,6 @@ self.R = np.array([[...], [...], [...]])
 self.T = np.array([[...], [...], [...]])
 ```
 
----
 
 ### 3. 配置 API Key
 
@@ -141,7 +132,6 @@ detector = ObjectDetector("你的DINOX_API")
 api_key = "你的豆包API")
 ```
 
----
 
 ### 4. 运行主程序
 
@@ -150,7 +140,6 @@ cd 图像识别抓取/类/
 python main.py
 ```
 
----
 
 ## 联系方式 / Contact
 
